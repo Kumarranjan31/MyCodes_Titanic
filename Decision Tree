@@ -1,0 +1,8 @@
+#Decision Tree
+
+library(rpart)
+library(rpart.plot)
+tree = rpart(Survived~ Sex + Age + Embarked, data = train, method = "class")
+prp(tree)
+pred1 = predict(tree, data = train, type = "class")
+pred1
